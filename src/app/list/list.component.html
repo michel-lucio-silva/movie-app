@@ -1,0 +1,75 @@
+<div class="container">
+    <h2 class="table-title">Movies List</h2>
+  
+    <!-- Wrapper para a tabela -->
+    <div class="table-wrapper">
+      <table mat-table [dataSource]="movies" class="full-width-table">
+        <!-- Coluna Title -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef class="centered">Title</th>
+          <td mat-cell *matCellDef="let movie" class="centered">
+            <div class="card">
+              <strong>Title:</strong> {{ movie.title }}
+            </div>
+          </td>
+        </ng-container>
+  
+        <!-- Coluna Year com filtro -->
+        <ng-container matColumnDef="year">
+          <th mat-header-cell *matHeaderCellDef class="centered">
+            Year
+            <mat-select [(value)]="selectedYear" (selectionChange)="onYearChange($event.value)" class="filter-select">
+              <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+              <mat-option [value]="undefined">All</mat-option>
+            </mat-select>
+          </th>
+          <td mat-cell *matCellDef="let movie" class="centered">
+            <div class="card">
+              <strong>Year:</strong> {{ movie.year }}
+            </div>
+          </td>
+        </ng-container>
+  
+        <!-- Coluna Studio -->
+        <ng-container matColumnDef="studios">
+          <th mat-header-cell *matHeaderCellDef class="centered">Studio</th>
+          <td mat-cell *matCellDef="let movie" class="centered">
+            <div class="card">
+              <strong>Studio:</strong> {{ movie.studios.join(', ') || 'N/A' }}
+            </div>
+          </td>
+        </ng-container>
+  
+        <!-- Coluna Winner com filtro -->
+        <ng-container matColumnDef="winner">
+          <th mat-header-cell *matHeaderCellDef class="centered">
+            Winner
+            <mat-select [(value)]="selectedWinner" (selectionChange)="onWinnerChange($event.value)" class="filter-select">
+              <mat-option value="true">Yes</mat-option>
+              <mat-option value="false">No</mat-option>
+              <mat-option [value]="undefined">All</mat-option>
+            </mat-select>
+          </th>
+          <td mat-cell *matCellDef="let movie" class="centered">
+            <div class="card">
+              <strong>Winner:</strong> {{ movie.winner ? 'Yes' : 'No' }}
+            </div>
+          </td>
+        </ng-container>
+  
+        <!-- Linhas da tabela -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  
+    <!-- Paginador -->
+    <mat-paginator
+      [length]="totalMovies"
+      [pageSize]="size"
+      [pageSizeOptions]="[5, 10, 20]"
+      (page)="onPageChange($event)"
+      class="centered-paginator">
+    </mat-paginator>
+  </div>
+  
