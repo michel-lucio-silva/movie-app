@@ -1,17 +1,6 @@
 # Projeto: Tabela de Filmes
 
 Este projeto apresenta uma aplicação Angular que exibe uma tabela interativa de filmes, permitindo filtrar dados por ano e vencedor, além de realizar a paginação.
-
-## Funcionalidades
-
-- Exibição de uma tabela com filmes, contendo as colunas:
-  - Título
-  - Ano
-  - Estúdio
-  - Vencedor (Sim/Não)
-- Filtros por ano e vencedor (Sim/Não)
-- Paginação para controlar a quantidade de itens exibidos por vez
-- Responsividade para telas de diferentes tamanhos (a partir de 768px de largura)
   
 ## Tecnologias Utilizadas
 
@@ -21,13 +10,9 @@ Este projeto apresenta uma aplicação Angular que exibe uma tabela interativa d
 ## Instalação
 
 1. Clone o repositório:
-    ```bash
-    git clone https://github.com/seu-usuario/tabela-filmes.git
-    ```
 
 2. Instale as dependências:
     ```bash
-    cd tabela-filmes
     npm install
     ```
 
