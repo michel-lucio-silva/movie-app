@@ -22,7 +22,7 @@
       "es2020",
       "dom"
     ],
-    "types": ["node", "jest", "cypress"]  
+    "types": ["node", "jest", "cypress", "jasmine"]  
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
