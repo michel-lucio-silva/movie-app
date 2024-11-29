@@ -12,9 +12,9 @@ export class DashboardComponent implements OnInit {
   studiosWithWinCount: StudioWins[] = [];
   producersMinInterval: ProducerInterval[] = [];
   producersMaxInterval: ProducerInterval[] = [];
-  moviesByYear: Movie[] = []; // Filmes filtrados pelo ano selecionado
-  availableYears: number[] = []; // Lista de anos disponíveis para o combo
-  selectedYear: number | null = null; // Ano selecionado
+  moviesByYear: Movie[] = []; 
+  availableYears: number[] = []; 
+  selectedYear: number | null = null;
 
   constructor(private moviesService: MoviesService) {}
 
@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
     // Carregar anos com múltiplos vencedores
     this.moviesService.getYearsWithMultipleWinners().subscribe((data) => {
       this.yearsWithMultipleWinners = data.years;
-      this.availableYears = data.years.map((year) => year.year); // Extrai os anos para o combo
+      this.availableYears = data.years.map((year) => year.year); 
     });
 
     // Carregar os 3 principais estúdios
@@ -48,7 +48,7 @@ export class DashboardComponent implements OnInit {
         this.moviesByYear = data.content;
       });
     } else {
-      this.moviesByYear = []; // Reseta a lista caso nenhum ano seja selecionado
+      this.moviesByYear = []; 
     }
   }
 }

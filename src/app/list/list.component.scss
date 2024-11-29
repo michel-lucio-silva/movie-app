@@ -109,14 +109,14 @@
     }
 
     .container {
-        overflow-x: auto;  // Habilita a rolagem horizontal
-        overflow-y: auto;  // Habilita a rolagem vertical
+        overflow-x: auto;  
+        overflow-y: auto;  
         max-height: 100vh;
     }
 
     .mat-paginator {
-        display: flex;  // Garantir que o paginador use flexbox
-        justify-content: flex-start;  // Alinha o paginador à esquerda
+        display: flex;  
+        justify-content: flex-start;  
     }
   }
   

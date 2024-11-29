@@ -14,10 +14,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field'; // Necessário para mat-form-field
-import { MatSelectModule } from '@angular/material/select'; // Necessário para mat-select
-import { MatOptionModule } from '@angular/material/core'; // Necessário para mat-option
-import { MatPaginatorModule } from '@angular/material/paginator'; // Necessário para mat-paginator
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatSelectModule } from '@angular/material/select'; 
+import { MatOptionModule } from '@angular/material/core'; 
+import { MatPaginatorModule } from '@angular/material/paginator'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { MatPaginatorModule } from '@angular/material/paginator'; // Necessário
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule, // Registra o HttpClient para injeção de dependência
+    HttpClientModule, 
     RouterModule.forRoot([
       { path: 'dashboard', component: DashboardComponent },
       { path: 'list', component: ListComponent },
@@ -40,10 +40,10 @@ import { MatPaginatorModule } from '@angular/material/paginator'; // Necessário
     MatIconModule,
     MatButtonModule,
     MatTableModule,
-    MatFormFieldModule, // Adicionado para mat-form-field
-    MatSelectModule, // Adicionado para mat-select
-    MatOptionModule, // Adicionado para mat-option
-    MatPaginatorModule, // Adicionado para mat-paginator
+    MatFormFieldModule, 
+    MatSelectModule, 
+    MatOptionModule, 
+    MatPaginatorModule, 
   ],
   providers: [],
   bootstrap: [AppComponent],

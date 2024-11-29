@@ -3,7 +3,7 @@ export interface Movie {
     title: string;
     year: number;
     winner: boolean;
-    studios: string[];  // Atualizado para ser um array de strings
+    studios: string[];  
     producers: string[];
   }
   

@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   selectedYear: number | undefined = undefined;
   selectedWinner: boolean | undefined = undefined;
   displayedColumns: string[] = ['title', 'year', 'studios', 'winner']; 
-  years: number[] = []; // Lista de anos disponíveis para filtro
+  years: number[] = []; 
   isLargeScreen: boolean = true;
   constructor(private moviesService: MoviesService) {}
 
@@ -34,7 +34,7 @@ export class ListComponent implements OnInit {
   loadYears(): void {
     this.moviesService.getMovies(0, 1000).subscribe((data) => {
       const yearsSet = new Set(data.content.map((movie: Movie) => movie.year));
-      this.years = Array.from(yearsSet).sort((a, b) => b - a); // Ordena os anos de forma decrescente
+      this.years = Array.from(yearsSet).sort((a, b) => b - a); 
     });
   }
 
