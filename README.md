@@ -15,7 +15,7 @@ Este projeto apresenta uma aplicação Angular que exibe uma tabela interativa d
   
 ## Tecnologias Utilizadas
 
-- **Frontend**: Angular, Angular Material, TypeScript, HTML, CSS
+- **Frontend**: Angular, Angular Material, TypeScript, HTML, SCSS e Jasmine.
 - **API**: Consumo de uma API externa para exibir os dados dos filmes.
 
 ## Instalação
