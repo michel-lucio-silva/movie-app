@@ -18,6 +18,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select'; 
 import { MatOptionModule } from '@angular/material/core'; 
 import { MatPaginatorModule } from '@angular/material/paginator'; 
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app/app-routing.module'; 
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ListComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule, 
@@ -44,6 +48,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatSelectModule, 
     MatOptionModule, 
     MatPaginatorModule, 
+    RouterModule.forRoot([]),
+    NoopAnimationsModule,
+    FormsModule ,
   ],
   providers: [],
   bootstrap: [AppComponent],

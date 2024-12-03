@@ -81,6 +81,30 @@
     margin-bottom: 20px;
   }
   
+  .full-width {
+    width: 100%;
+  }
+  
+  .invalid {
+    border-color: red !important;
+  }
+  
+  .mat-form-field .mat-error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+  
+  input[matInput] {
+    width: 100%;
+    padding: 8px;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
   // Responsividade
   @media (max-width: 1024px) {
     .row {

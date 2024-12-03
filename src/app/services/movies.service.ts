@@ -23,30 +23,20 @@ export class MoviesService {
 
   // Método para buscar intervalos de vitórias dos produtores
   getProducersInterval(): Observable<{ min: ProducerInterval[]; max: ProducerInterval[] }> {
-    return this.http.get<{ min: ProducerInterval[]; max: ProducerInterval[] }>(
-      `${this.baseUrl}?projection=max-min-win-interval-for-producers`
-    );
+    return this.http.get<{ min: ProducerInterval[]; max: ProducerInterval[] }>(`${this.baseUrl}?projection=max-min-win-interval-for-producers`);
   }
 
   // Método para buscar filmes com paginação e filtros de vencedor e ano
-  getMovies(page: number, size: number, winner?: boolean, year?: number): Observable<{ content: Movie[]; totalElements: number }> {
+  getMovies(page: number, size: number, winner: boolean = true, year?: number): Observable<{ content: Movie[]; totalElements: number }> {
     let params = new HttpParams()
       .set('page', page.toString())
-      .set('size', size.toString());
-
-    if (winner !== undefined) {
-      params = params.set('winner', winner.toString());
-    }
+      .set('size', size.toString())
+      .set('winner', winner.toString()); // Filtrar somente vencedores
 
     if (year) {
-      params = params.set('year', year.toString());
+      params = params.set('year', year.toString()); // Filtrar por ano
     }
 
     return this.http.get<{ content: Movie[]; totalElements: number }>(this.baseUrl, { params });
-  }
-
-  // Método para buscar todos os anos disponíveis para filtro
-  getAvailableYears(): Observable<number[]> {
-    return this.http.get<number[]>(`${this.baseUrl}/years`);
   }
 }
